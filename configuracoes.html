@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações de Acessibilidade - Mão na Roda</title>
+  <link rel="stylesheet" href="configuracoes.css">
+</head>
+<body>
+ 
+
+ <!-- SIDEBAR -->
+
+        <asside class="sidebar">
+            <img  src="img/logo.png" alt="Leme de navio com a frase Mão na Roda">
+            <h1>Mão na Roda</h1>
+            <nav>
+                <ul>
+                    <strong>
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/home.png" alt="logo de Home" class="sidebar-icon">
+                            <li><a href="./index.html">Home</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/conteudos.png" alt="logo de materias" class="sidebar-icon">
+                            <li><a href="materias.html">Matérias</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/conteudos.png" alt="logo de questoes" class="sidebar-icon">
+                            <li><a href="questoes.html">Questões</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/escrita.png" alt="logo de redação" class="sidebar-icon">
+                            <li><a href="form.html">Redação</a></li>
+                        </div>
+
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/chatbot.png" alt="Imagem de IA" class="sidebar-icon">
+                            <li><a href="auroraia.html">Aurora IA</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/calendario.png" alt="calendario" class="sidebar-icon">
+                            <li><a href="calendario.html">Calendário</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/suporte.png" alt="Suporte" class="sidebar-icon">
+                            <li><a href="suporte.html">Suporte</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/configuracoes.png" alt="Logo de configurações" class="sidebar-icon">
+                            <li><a href="configuracoes.html">Configurações</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/sair.png" alt="Logo de sair" class="sidebar-icon">
+                            <li><a href="login.html">Sair</a></li>
+                        </div>
+                    
+                    </strong>
+                </ul>
+            </nav>
+        </asside>
+
+
+  <!-- Perfil do Usuário -->
+  <section class="perfil">
+    <img src="img/perfil.png" alt="Foto do usuário" class="perfil-img">
+    <div class="perfil-info">
+      <h2>Arthur Silva</h2>
+      <p><strong>Email:</strong> arthu.silva@gmail.com</p>
+      <p><strong>Telefone:</strong> (41) 98765-4321</p>
+      <p><strong>Cidade:</strong> Curitiba - PR</p>
+      <button class="editar-btn" onclick="window.location.href='form.html'">Editar Perfil</button>
+      <button class="editar-btn" onclick="window.location.href='form.html'">
+        Personalizar Estudo
+      </button>
+
+    </div>
+  </section>
+
+  <main>
+    <section class="config-section">
+      <h2>👁️ Visibilidade</h2>
+      <div class="config-item">
+        <label for="font-size">Tamanho da Fonte</label>
+        <div>
+          <button onclick="adjustFontSize('increase')">A+</button>
+          <button onclick="adjustFontSize('decrease')">A-</button>
+          <button onclick="resetSettings()">Resetar</button>
+        </div>
+      </div>
+
+      <div class="config-item">
+        <label>Modo de Alto Contraste</label>
+        <button onclick="toggleContrast()">Ativar/Desativar</button>
+      </div>
+
+      <div class="config-item">
+        <label for="spacing">Espaçamento entre Linhas</label>
+        <button onclick="toggleSpacing()">Ativar/Desativar</button>
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>🧩 Leitura</h2>
+      <div class="config-item">
+        <label for="dyslexia">Fonte Amigável para Dislexia</label>
+        <button onclick="toggleDyslexia()">Ativar/Desativar</button>
+      </div>
+
+      <div class="config-item">
+        <label for="theme">Tema do Site</label>
+        <select id="theme" onchange="changeTheme(this.value)">
+          <option value="padrao">Padrão</option>
+          <option value="escuro">Escuro</option>
+          <option value="claro">Claro</option>
+          <option value="solarizado">Solarizado</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>🔊 Áudio</h2>
+      <div class="config-item">
+        <label for="screen-reader">Leitor de Tela</label>
+        <button onclick="alert('Recurso de leitor de tela em desenvolvimento!')">Ativar</button>
+      </div>
+      <div class="config-item">
+        <label for="voice">Velocidade de Narração</label>
+        <input type="range" min="0.5" max="2" step="0.1" value="1">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let fontSize = 1;
+
+    function adjustFontSize(action) {
+      if(action === 'increase') fontSize += 0.1;
+      if(action === 'decrease') fontSize -= 0.1;
+      document.body.style.fontSize = fontSize + "rem";
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle("high-contrast");
+    }
+
+    function toggleDyslexia() {
+      document.body.classList.toggle("dyslexia-font");
+    }
+
+    function toggleSpacing() {
+      document.body.classList.toggle("extra-spacing");
+    }
+
+    function changeTheme(value) {
+      switch(value) {
+        case "escuro":
+          document.body.style.background = "#121212";
+          document.body.style.color = "#fff";
+          break;
+        case "claro":
+          document.body.style.background = "#fff";
+          document.body.style.color = "#000";
+          break;
+        case "solarizado":
+          document.body.style.background = "#fdf6e3";
+          document.body.style.color = "#657b83";
+          break;
+        default:
+          document.body.style.background = "#f9f9f9";
+          document.body.style.color = "#333";
+      }
+    }
+
+    function resetSettings() {
+      document.body.style.fontSize = "1rem";
+      fontSize = 1;
+      document.body.classList.remove("high-contrast", "dyslexia-font", "extra-spacing");
+      changeTheme("padrao");
+    }
+  </script>
+</body>
+</html>
+

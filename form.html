@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalização da IA - Mão na Roda</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <main class="container">
+    <h1>🎨 Personalize sua Experiência com a IA</h1>
+    <p class="intro">Responda algumas perguntas para que a plataforma se adapte às suas necessidades de estudo e acessibilidade.</p>
+
+    <form id="preferencias-form" onsubmit="salvarPreferencias(event)">
+      <!-- 1 -->
+      <label for="deficiencia">1. Você possui algum tipo de deficiência?</label>
+      <select id="deficiencia" name="deficiencia">
+        <option value="nenhuma">Nenhuma</option>
+        <option value="visual">Visual</option>
+        <option value="auditiva">Auditiva</option>
+        <option value="motora">Motora</option>
+        <option value="intelectual">Intelectual</option>
+        <option value="multipla">Múltipla</option>
+      </select>
+
+      <!-- 2 -->
+      <label for="neurodiv">2. Você se identifica com alguma neurodivergência?</label>
+      <select id="neurodiv" name="neurodiv">
+        <option value="nenhuma">Nenhuma</option>
+        <option value="tea">TEA (Transtorno do Espectro Autista)</option>
+        <option value="tdah">TDAH</option>
+        <option value="dislexia">Dislexia</option>
+        <option value="discalculia">Discalculia</option>
+        <option value="outra">Outra</option>
+      </select>
+
+      <!-- 3 -->
+      <label for="aprendizado">3. Como você mais gosta de aprender?</label>
+      <select id="aprendizado" name="aprendizado">
+        <option value="visual">Com imagens, vídeos e diagramas</option>
+        <option value="auditivo">Ouvindo explicações</option>
+        <option value="leitura">Lendo textos e resumos</option>
+        <option value="pratico">Com exemplos práticos e exercícios</option>
+      </select>
+
+      <!-- 4 -->
+      <label for="velocidade">4. Qual ritmo de aprendizado você prefere?</label>
+      <select id="velocidade" name="velocidade">
+        <option value="lento">Mais devagar, com explicações detalhadas</option>
+        <option value="moderado">Ritmo moderado</option>
+        <option value="rapido">Mais rápido e direto ao ponto</option>
+        <option value="adaptativo">Que se adapte ao meu ritmo</option>
+      </select>
+
+      <!-- 5 -->
+      <label for="linguagem">5. Prefere linguagem formal ou simples?</label>
+      <select id="linguagem" name="linguagem">
+        <option value="simples">Simples e direta</option>
+        <option value="formal">Mais formal e detalhada</option>
+        <option value="interativa">Interativa, como uma conversa</option>
+      </select>
+
+      <!-- 6 -->
+      <label for="resumo">6. Gosta que os conteúdos venham com resumos no final?</label>
+      <select id="resumo" name="resumo">
+        <option value="sim">Sim, sempre</option>
+        <option value="asvezes">Às vezes</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <!-- 7 -->
+      <label for="exemplos">7. Você prefere explicações com exemplos do dia a dia?</label>
+      <select id="exemplos" name="exemplos">
+        <option value="sim">Sim, isso ajuda</option>
+        <option value="tanto-faz">Tanto faz</option>
+        <option value="nao">Não, prefiro só teoria</option>
+      </select>
+
+      <!-- 8 -->
+      <label for="adaptacao">8. Você gostaria de recursos adicionais?</label>
+      <select id="adaptacao" name="adaptacao">
+        <option value="audiodescricao">Audiodescrição</option>
+        <option value="legendas">Legendas</option>
+        <option value="libras">Tradução em Libras</option>
+        <option value="fonte-grande">Fonte maior</option>
+        <option value="contraste">Contraste alto</option>
+      </select>
+
+      <!-- 9 -->
+      <label for="dificuldades">9. Quais são suas maiores dificuldades nos estudos?</label>
+      <textarea id="dificuldades" name="dificuldades" rows="3" placeholder="Ex: falta de atenção, dificuldade em ler textos longos..."></textarea>
+
+      <!-- 10 -->
+      <label for="objetivo">10. Qual seu principal objetivo ao usar a plataforma?</label>
+      <textarea id="objetivo" name="objetivo" rows="3" placeholder="Ex: aprender melhor matemática, revisar conteúdos para prova, estudar para vestibular..."></textarea>
+
+      <button type="submit">💾 Salvar Preferências</button>
+    </form>
+
+    <div id="mensagem-sucesso" style="display: none; text-align: center; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;">
+      ✅ Preferências salvas com sucesso! Redirecionando para a página inicial...
+    </div>
+  </main>
+
+  <script>
+    function salvarPreferencias(event) {
+      event.preventDefault();
+      
+      // Coletar todos os dados do formulário
+      const formData = new FormData(event.target);
+      const preferencias = {};
+      
+      for (let [key, value] of formData.entries()) {
+        preferencias[key] = value;
+      }
+      
+      // Salvar no localStorage (simulando banco de dados)
+      localStorage.setItem('preferenciasUsuario', JSON.stringify(preferencias));
+      
+      // Mostrar mensagem de sucesso
+      document.getElementById('mensagem-sucesso').style.display = 'block';
+      
+      // Redirecionar para a página inicial após 2 segundos
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

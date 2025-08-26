@@ -1,0 +1,551 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar{
+    float: left;
+    width: 240px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #e0e0e0;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    box-shadow: 0 2px 8px rgba(1, 1, 1, 0.5);
+}
+
+.sidebar h1{
+     font-size: 2rem;
+    color: #333; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sidebar img {
+    width: 50%; 
+    max-width: 180px; 
+    height: auto;
+    margin-bottom: 20px; 
+}
+
+.sidebar a{
+    padding: 15px;
+
+}
+
+.sidebar nav ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar-item {
+  display: flex;
+  gap: 12px; /* Espaço entre ícone e texto */
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Ícones */
+.sidebar-item img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Links */
+.sidebar-item a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Opcional: realçar link ativo */
+.sidebar-item a.active {
+  font-weight: bold;
+  color: #4cafef;
+}
+
+
+/*Dashboard*/
+
+.dashboard {
+    float:left;
+    width: 110vh;
+    margin: 2vh 50px;
+
+}
+
+.cronograma-card, .questoes-card, .materias-card, .redacao-card, .carrosel{ 
+    background-color: #ffffff; /* Cor de fundo do card */
+    border-radius: 30px; /* Bordas arredondadas do card */
+    padding: 2rem; /* Padding interno do card */
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra do perfil */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave para mudanças de cor e sombra */
+
+}
+/*Carrosel*/
+.carrosel {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens do carrossel */
+}
+.carrosel-item img{
+    width: 100%; /* Largura da imagem do carrossel */
+    height: auto; /* Altura automática para manter a proporção */
+    border-radius: 20px; /* Bordas arredondadas da imagem do carrossel */
+}
+
+/* Cronograma Card */
+
+.cronograma-text-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.cronograma-card h2{
+    font-size: 2rem; /* Tamanho da fonte do título */
+    margin-bottom: 1rem; /* Margem inferior do título */
+    padding: 15px;
+}
+
+.cronograma-header {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.cronograma-header img {
+    width: 30%;
+    height: auto; 
+    margin-right: 10px; 
+}
+
+
+/* Questões card */
+
+.questoes-title {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    color: #333; /* Cor do texto do título */
+    margin-bottom: 1rem; /* Margem inferior do título */
+    text-align: center;
+}
+
+.questoes-infobox{
+    float: left;
+    margin-right: 10vh;
+    margin-left: 10vh;
+    margin-top: 6vh;
+    height: 500px; /* Altura da caixa de acertos */
+    padding: 20px; /* Padding interno da caixa de acertos */
+    width: 300px; /* Largura da caixa de acertos */
+    background-color: #f8f9fa; /* Cor de fundo da caixa de acertos */
+    border-radius: 20px; /* Bordas arredondadas da caixa de acertos */
+    margin-bottom: 3rem; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra da caixa de informações */
+}
+
+.questoes-infobox h1,
+.questoes-infobox p,
+.questoes-infobox li {
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove a decoração do texto */
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+.questoes-infobox p{
+    color: #333; /* Cor do texto */
+    font-weight: bold;
+    font-size: 1.2rem; /* Tamanho da fonte */
+    margin-bottom: 0.5rem; /* Margem inferior dos itens */
+    transition: color 0.5s ease; /* Transição suave para mudanças de cor */
+    margin-top: 10px; /* Margem superior dos itens */
+    padding: 10px; /* Padding interno dos itens */
+    border-radius: 10px; /* Bordas arredondadas dos itens */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra dos itens */
+}
+
+.questoes-infobox button {
+    background-color: #4a6cf7; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    font-size: 1.2rem; /* Tamanho da fonte do botão */
+    margin-top: 10PX;
+    padding: 10px 20px; /* Padding interno do botão */
+    border-radius: 5px; /* Bordas arredondadas do botão */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para mudanças de cor e transformação */
+}
+
+.questoes-infobox button:hover {
+    background-color: #007bff; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+}
+
+.questoes-infobox p:hover {
+    color: #007bff; /* Cor do texto ao passar o mouse */
+    transition: color 0.5s ease; /* Transição suave para mudanças de cor */
+    transform: scale(1.005); /* Aumenta a caixa de informações ao passar o mouse */
+}
+
+.questoes-card-icon {
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    width: 180px; 
+    height: 150px; 
+    background-color: #f8f9fa; 
+    padding: 1rem; /* Padding interno da caixa de informações */
+    margin-bottom: 3rem; 
+    border-radius: 20px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.questoes-card-icon img{
+    padding: 10px;
+}
+
+.questoes-card-icon:hover {
+    transform: translateY(-5px); /* Eleva a caixa ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.filter-icon, .simulado-icon, .provas-icon, .conteudos-icon, .desempenho-icon, .progresso-icon, .simulado-icon, .redacao-icon, .temas-icon, .video-icon, .materias-icon, .estatisticas-icon, .cronograma-icon {
+  width: 60px; /* Largura do ícone */
+  height: 60px; /* Altura do ícone */
+  margin: 0 auto;
+    
+}
+
+
+/* calendar section */
+
+.calendar-section {
+    float: right;
+    margin-right: 2vh;
+    
+}
+
+/* materias card */
+
+.materias-card-icon{
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    width: 40vh; 
+    height: 20vh; 
+    background-color: #f8f9fa; 
+    padding: 1rem; /* Padding interno da caixa de informações */
+    margin-bottom: 3rem; 
+    border-radius: 20px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.materias-card-icon:hover {
+    transform: translateY(-5px); /* Eleva a caixa ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.materias-infobox{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    text-align: center; 
+   justify-content: space-around;
+}
+
+.progresso-card-icon{
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    width: 600px; 
+    height: 150; 
+    background-color: #f8f9fa; 
+    padding: 1rem; /* Padding interno da caixa de informações */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-bottom: 3rem; 
+    border-radius: 20px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.progresso-card-icon:hover {
+    transform: translateY(-5px); /* Eleva a caixa ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.materias-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem; 
+    padding: 15px;
+
+}
+
+.progresso-card-icon strong {
+    font-size: 1.5rem;
+    margin-bottom: 1rem; 
+    padding: 15px;
+
+
+}
+
+ .progress {
+      height: 30px;
+      width: 0;
+      background: linear-gradient(90deg, #4caf50, #81c784);
+      text-align: center;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      line-height: 30px;
+      border-radius: 50px;
+      transition: width 0.4s ease;
+    }
+
+
+/* redacao card */
+
+.redacao-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    text-align: center; 
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.redacao-infobox, .info-box {
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    width: 600px; 
+    height: 170px; 
+    background-color: #f8f9fa; 
+    padding: 1rem; /* Padding interno da caixa de informações */
+    margin-bottom: 3rem; 
+    border-radius: 20px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    
+}
+
+.redacao-infobox p{
+    padding: 5px;
+}
+
+.redacao-infobox:hover, .info-box:hover {
+    transform: translateY(-5px); /* Eleva a caixa ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.redacao-card h2{
+    font-size: 2rem; /* Tamanho da fonte do título */
+    margin-bottom: 1rem; /* Margem inferior do título */
+    padding: 15px;
+}
+
+/*Perfil*/
+
+.perfil {
+    max-width: 600px; /* Largura máxima do perfil */
+    margin: 2rem auto; /* Margem superior/inferior de 2rem e centraliza horizontalmente */
+    padding: 2rem; /* Padding interno do perfil */
+    border-radius: 12px; /* Bordas arredondadas */
+    background: linear-gradient(145deg, #ffffff, #f5f7fa); /* Gradiente de fundo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra do perfil */
+    text-align: center; /* Centraliza o texto */
+    transition: transform 0.3s ease; /* Transição suave para transformações */
+
+}
+
+.perfil:hover {
+    transform: translateY(-5px); /* Eleva o perfil ao passar o mouse */
+}
+
+/* Profile image styles */
+.perfil-img {
+    width: 120px; /* Largura da imagem de perfil */
+    height: 120px; /* Altura da imagem de perfil */
+    border-radius: 50%; /* Bordas arredondadas para formato circular */
+    object-fit: cover; /* Cobre o espaço disponível mantendo a proporção */
+    border: 4px solid #4a6cf7; /* Borda da imagem de perfil */
+    box-shadow: 0 4px 15px rgba(74, 108, 247, 0.3); /* Sombra da imagem de perfil */
+    margin-bottom: 1.5rem; /* Margem inferior da imagem de perfil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+.perfil-img:hover {
+    transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+    box-shadow: 0 6px 20px rgba(74, 108, 247, 0.4); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Title styles */
+.perfil h2 {
+    font-size: 1.8rem; /* Tamanho da fonte do título */
+    color: #2d3748; /* Cor do texto do título */
+    margin-bottom: 0.5rem; /* Margem inferior do título */
+    font-weight: 600; /* Peso da fonte do título */
+}
+
+/* Progress text styles */
+.perfil p {
+    font-size: 1rem; /* Tamanho da fonte do parágrafo */
+    color: #4a5568; /* Cor do texto do parágrafo */
+    margin-bottom: 1rem; /* Margem inferior do parágrafo */
+}
+
+/* Progress bar styles */
+.progress-bar {
+    height: 10px; /* Altura da barra de progresso */
+    background: #e2e8f0; /* Cor de fundo da barra de progresso */
+    border-radius: 5px; /* Bordas arredondadas da barra de progresso */
+    overflow: hidden; /* Oculta o conteúdo que excede a altura */
+    margin-top: 1rem; /* Margem superior da barra de progresso */
+}
+
+.progress {
+    height: 100%; /* Altura total da barra de progresso */
+    background: linear-gradient(90deg, #4a6cf7, #6b8cff); /* Gradiente da barra de progresso */
+    border-radius: 5px; /* Bordas arredondadas da barra de progresso */
+    transition: width 0.5s ease; /* Transição suave para a largura da barra de progresso */
+}
+
+
+.calendar-card, .eventos-futuros{
+    background-color: #ffffff; /* Cor de fundo do card */
+    border-radius: 12px; /* Bordas arredondadas do card */
+    padding: 2rem; /* Padding interno do card */
+    margin-bottom: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra do card */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave para mudanças de cor e sombra */
+    
+}
+
+.calendar-card h2, .eventos-futuros h3 {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    color: #333; /* Cor do texto do título */
+    margin-bottom: 1rem; /* Margem inferior do título */
+}
+
+.eventos-futuros {
+    margin-top: 2rem; /* Margem superior da seção de eventos futuros */
+}
+
+.eventos-futuros ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+}
+
+/* Ícone */
+.eventos-futuros .eventos-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Título */
+.eventos-futuros h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Lista */
+.eventos-futuros ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eventos-futuros li {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f5f7fa;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.eventos-futuros li:hover {
+  background: #e6f0ff;
+  transform: translateX(5px);
+}
+
+/* Último item sem espaçamento extra */
+.eventos-futuros li:last-child {
+  margin-bottom: 0;
+}
+
+
+.calendar {
+  width: 100%; 
+  max-width: 600px; 
+  max-width: 400px;
+  background: #fff;
+border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.month {
+  background-color: #4a6cf7;
+  padding: 1rem;
+  height: 60px;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+border-radius: 30px 30px 0 0;
+}
+
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+
+}
+
+.weekdays div {
+  background-color: #e0e7ff;
+  padding: 0.5rem 0;
+  font-weight: bold;
+    color: #1e40af;
+
+}
+
+.day {
+  padding: 1rem 0;
+  border: 1px solid #ddd;
+  transition: background 0.2s;
+    color: #333;
+    border-radius: 10px;
+}
+
+.day:hover {
+  background-color: #dbeafe;
+  cursor: pointer;
+}
+
+.empty {
+  border: 1px solid transparent;
+}

@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar{
+    float: left;
+    width: 240px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #e0e0e0;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    box-shadow: 0 2px 8px rgba(1, 1, 1, 0.5);
+}
+
+.sidebar h1{
+     font-size: 2rem;
+    color: #333; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sidebar img {
+    width: 50%; 
+    max-width: 180px; 
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar a{
+    padding: 15px;
+
+}
+
+.sidebar nav ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar-item {
+  display: flex;
+  gap: 12px; /* Espaço entre ícone e texto */
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Ícones */
+.sidebar-item img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Links */
+.sidebar-item a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Opcional: realçar link ativo */
+.sidebar-item a.active {
+  font-weight: bold;
+  color: #4cafef;
+}
+
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Seções */
+section {
+    max-width: 900px;
+    margin-left: 300px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8fdf8;
+    border: 1px solid #cdeccd;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+/* Títulos */
+h2 {
+    font-size: 3rem;
+    color: #27ae60;
+    margin-bottom: 15px;
+    border-left: 6px solid #2ecc71;
+    padding-left: 10px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin: 15px 0;
+    color: #16a085;
+    text-align: center;
+}
+
+/* Texto */
+p {
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Listas */
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+    list-style: none;
+
+}
+
+/* ================== RESPONSIVIDADE ================== */
+
+/* Tablets (768px e abaixo) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+        margin-left: 1vh;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sidebar img {
+        width: 60%;
+        max-width: 150px;
+    }
+    
+    .sidebar-item {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .sidebar-item img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .sidebar-item a {
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    section {
+        margin-left: 220px;
+        max-width: calc(100% - 240px);
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Celulares grandes (480px e abaixo) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        float: none;
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        position: relative;
+        order: 2;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sidebar img {
+        width: 50%;
+        max-width: 120px;
+    }
+    
+    .sidebar-item {
+        padding: 8px;
+        gap: 6px;
+    }
+    
+    .sidebar-item img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .sidebar-item a {
+        font-size: 0.8rem;
+    }
+    
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 15px;
+        border-radius: 0;
+    }
+    
+    section {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        padding-left: 5px;
+    }
+    
+    h3 {
+        font-size: 1.3em;
+    }
+    
+    p {
+        font-size: 0.95em;
+    }
+    
+    ul {
+        margin-left: 10px;
+    }
+}
+
+/* Celulares pequenos (320px e abaixo) */
+@media (max-width: 320px) {
+    .sidebar {
+        padding: 10px;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.2rem;
+    }
+    
+    .sidebar img {
+        width: 60%;
+        max-width: 100px;
+    }
+    
+    .sidebar-item {
+        padding: 6px;
+        gap: 4px;
+    }
+    
+    .sidebar-item img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .sidebar-item a {
+        font-size: 0.75rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    section {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+    }
+    
+    p {
+        font-size: 0.9em;
+    }
+}
+

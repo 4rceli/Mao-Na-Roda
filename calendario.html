@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário de Estudos</title>
+  <link rel="stylesheet" href="calendario.css">
+</head>
+<body>
+
+    <!-- SIDEBAR PRINCIPAL -->
+    <asside class="sidebar">
+        <img  src="img/logo.png" alt="Leme de navio com a frase Mão na Roda">
+        <h1>Mão na Roda</h1>
+        <nav>
+            <ul>
+                <strong>
+                    <div class="sidebar-item">
+                        <img src="img/sidebar-icons/home.png" alt="logo de Home" class="sidebar-icon">
+                        <li><a href="./index.html">Home</a></li>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <img src="img/sidebar-icons/conteudos.png" alt="logo de materias" class="sidebar-icon">
+                        <li><a href="materias.html">Matérias</a></li>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <img src="img/conteudos.png" alt="logo de questoes" class="sidebar-icon">
+                        <li><a href="questoes.html">Questões</a></li>
+                    </div>
+
+                                    <div class="sidebar-item">
+                    <img src="img/sidebar-icons/escrita.png" alt="logo de redação" class="sidebar-icon">
+                    <li><a href="form.html">Redação</a></li>
+                </div>
+
+                <div class="sidebar-item">
+                    <img src="img/sidebar-icons/chatbot.png" alt="Imagem de IA" class="sidebar-icon">
+                    <li><a href="auroraia.html">Aurora IA</a></li>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <img src="img/sidebar-icons/calendario.png" alt="calendario" class="sidebar-icon">
+                        <li><a href="calendario.html">Calendário</a></li>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <img src="img/sidebar-icons/suporte.png" alt="Suporte" class="sidebar-icon">
+                        <li><a href="suporte.html">Suporte</a></li>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <img src="img/sidebar-icons/configuracoes.png" alt="Logo de configurações" class="sidebar-icon">
+                        <li><a href="configuracoes.html">Configurações</a></li>
+                    </div>
+
+                    <div class="sidebar-item">
+                        <img src="img/sidebar-icons/sair.png" alt="Logo de sair" class="sidebar-icon">
+                        <li><a href="login.html">Sair</a></li>
+                    </div>
+                </strong>
+            </ul>
+        </nav>
+    </asside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="app-container">
+        <!-- Calendário -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prev">‹</button>
+                <h2 id="month-year"></h2>
+                <button id="next">›</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid">
+                <div class="day-name">Dom</div>
+                <div class="day-name">Seg</div>
+                <div class="day-name">Ter</div>
+                <div class="day-name">Qua</div>
+                <div class="day-name">Qui</div>
+                <div class="day-name">Sex</div>
+                <div class="day-name">Sáb</div>
+                <!-- Dias do mês são adicionados pelo JS -->
+            </div>
+        </div>
+
+        <!-- Barra lateral de eventos -->
+        <div class="calendar-sidebar">
+            <h3>Eventos do Dia</h3>
+            <div id="event-list">
+                <p>Nenhum evento selecionado</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para adicionar evento -->
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <h3>Adicionar Evento</h3>
+            <input type="text" id="event-text" placeholder="Descrição do evento...">
+            <div class="modal-actions">
+                <button id="save-event">Salvar</button>
+                <button id="close-modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calendario.js"></script>
+</body>
+</html>

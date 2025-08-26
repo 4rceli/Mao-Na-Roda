@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerador de Questões ENEM/Vestibular com IA</title>
+  <link rel="stylesheet" href="questoes.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+
+        <asside class="sidebar">
+            <img  src="img/logo.png" alt="Leme de navio com a frase Mão na Roda">
+            <h1>Mão na Roda</h1>
+            <nav>
+                <ul>
+                    <strong>
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/home.png" alt="logo de Home" class="sidebar-icon">
+                            <li><a href="./index.html">Home</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/conteudos.png" alt="logo de materias" class="sidebar-icon">
+                            <li><a href="materias.html">Matérias</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/conteudos.png" alt="logo de questoes" class="sidebar-icon">
+                            <li><a href="questoes.html">Questões</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/escrita.png" alt="logo de redação" class="sidebar-icon">
+                            <li><a href="form.html">Redação</a></li>
+                        </div>
+
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/chatbot.png" alt="Imagem de IA" class="sidebar-icon">
+                            <li><a href="auroraia.html">Aurora IA</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/calendario.png" alt="calendario" class="sidebar-icon">
+                            <li><a href="calendario.html">Calendário</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/suporte.png" alt="Suporte" class="sidebar-icon">
+                            <li><a href="suporte.html">Suporte</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/configuracoes.png" alt="Logo de configurações" class="sidebar-icon">
+                            <li><a href="configuracoes.html">Configurações</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/sair.png" alt="Logo de sair" class="sidebar-icon">
+                            <li><a href="login.html">Sair</a></li>
+                        </div>
+                    
+                    </strong>
+                </ul>
+            </nav>
+        </asside>
+  
+  <main class="main-container">
+    <section class="filter-section">
+      <h2>Gerar Questões com IA</h2>
+      <div class="filters">
+        <select id="tipo">
+          <option value="ENEM">ENEM</option>
+          <option value="Vestibular">Vestibular</option>
+        </select>
+        <select id="materia">
+          <option value="Matemática">Matemática</option>
+          <option value="Português">Português</option>
+          <option value="Física">Física</option>
+          <option value="Química">Química</option>
+          <option value="Biologia">Biologia</option>
+          <option value="História">História</option>
+          <option value="Geografia">Geografia</option>
+        </select>
+        <button onclick="gerarQuestoes()">Gerar</button>
+      </div>
+    </section>
+
+    <section class="questoes-section" id="questoes-container">
+      <!-- Questões aparecerão aqui -->
+    </section>
+  </main>
+
+  <script>
+    async function gerarQuestoes() {
+      const tipo = document.getElementById("tipo").value;
+      const materia = document.getElementById("materia").value;
+      const container = document.getElementById("questoes-container");
+
+      container.innerHTML = "<p>Carregando questões...</p>";
+
+      const prompt = `Gere 3 questões objetivas estilo ${tipo} sobre a matéria ${materia}, cada uma com 4 alternativas e indique a correta.`;
+
+      const resposta = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer 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"
+        },
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: prompt }],
+          temperature: 0.7
+        })
+      });
+
+      const data = await resposta.json();
+      const texto = data.choices[0].message.content;
+
+      container.innerHTML = `<div class="questao-card"><pre>${texto}</pre></div>`;
+    }
+  </script>
+</body>
+</html>

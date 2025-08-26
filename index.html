@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mão Na Roda - Inicio</title>
+</head>
+    <body>
+        <!-- SIDEBAR -->
+
+        <asside class="sidebar">
+            <img  src="img/logo.png" alt="Leme de navio com a frase Mão na Roda">
+            <h1>Mão na Roda</h1>
+            <nav>
+                <ul>
+                    <strong>
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/home.png" alt="logo de Home" class="sidebar-icon">
+                            <li><a href="./index.html">Home</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/conteudos.png" alt="logo de materias" class="sidebar-icon">
+                            <li><a href="materias.html">Matérias</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/conteudos.png" alt="logo de questoes" class="sidebar-icon">
+                            <li><a href="questoes.html">Questões</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/escrita.png" alt="logo de redação" class="sidebar-icon">
+                            <li><a href="redacao.html">Redação</a></li>
+                        </div>
+
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/chatbot.png" alt="Imagem de IA" class="sidebar-icon">
+                            <li><a href="auroraIA.html">Aurora IA</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/calendario.png" alt="calendario" class="sidebar-icon">
+                            <li><a href="calendario.html">Calendário</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/suporte.png" alt="Suporte" class="sidebar-icon">
+                            <li><a href="suporte.html">Suporte</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/configuracoes.png" alt="Logo de configurações" class="sidebar-icon">
+                            <li><a href="configuracoes.html">Configurações</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/sair.png" alt="Logo de sair" class="sidebar-icon">
+                            <li><a href="login.html">Sair</a></li>
+                        </div>
+                    
+                    </strong>
+                </ul>
+            </nav>
+        </asside>
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+            <section class="dashboard">
+                
+                <div class="carrosel">
+                    <div class="carrosel-item">
+                        <img src="img/paisagem.jpg" alt="Imagem do Carrossel 1">
+                    </div>
+                </div>
+
+                <div class="cronograma-card">
+                    <div class="cronograma-header">
+                        <div class="cronograma-text-content">
+                        <h2>Cronograma de Estudos</h2>
+                            <p>Planeje sua semana com organização e eficiência!</p>
+                        </div>
+                        <img src="./img/estudo.png" alt="Imagem estudos">
+                    </div>
+                </div>
+
+                <div class="questoes-card">
+                    <div class="questoes-title">
+                        <h2>Questões do Dia</h2>                   
+                    </div>
+                    <div class="questoes-content">
+                        <div class="questoes-infobox">
+                            <h1><strong>Acertos:</strong></h1>
+                                <p>Você acertou <b>80%</b> das questões!</p>
+                                <li>
+                                    <p>Matemática - 9/10</p>
+                                    <p>Literatura - 6/10</p>
+                                    <p>História - 7/10</p>
+                                    <p>Ciências da Natureza - 8/10</p>
+                                    <button>Ver Questões</button>
+                                </li>
+                        </div>
+
+                        <div class="questoes-icons">
+
+                            <div class="questoes-card-icon">
+                                <strong>Filtro de Questões:</strong>
+                                <img src="img/filter.png" alt="Filtro de Questões" class="filter-icon" />
+                                <p>Personalize sua prática.</p>
+                            </div>
+
+                            <div class="questoes-card-icon">
+                                <strong>Simulados:</strong>
+                                <img src="img/simulado.png" alt="Simulado" class="simulado-icon" />
+                                <p>Próximo simulado: <b>15/10/2025</b></p>
+                            </div>
+
+                            <div class="questoes-card-icon">
+                                <strong>Provas Antigas:</strong>
+                                <img src="img/provas-antigas.png" alt="Provas Antigas" class="provas-icon" />
+                                <p>Provas anteriores e resultados.</p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materias-card">
+                    <div class="materias-title">
+                        <h2>Materias</h2>
+                    </div>
+
+                    <div class="materias-content">
+                        <div class="materias-infobox">
+                        <div class="materias-card-icon">
+                                <strong>Conteúdos:</strong>
+                                <img src="img/conteudos.png" alt="conteudos" class="conteudos-icon" />
+                                <p>Explore os conteúdos disponíveis.</p>
+                            </div>
+                            <div class="materias-card-icon">
+                                <strong>Desempenho:</strong>
+                                <img src="img/Desempenho.png" alt="Desempenho" class="desempenho-icon" />
+                                <p>Veja onde você está indo bem e onde pode melhorar.</p>
+                            </div>
+                    </div>
+                     <div class="progresso-card-icon">
+                                <strong>Progresso:</strong>
+                                
+                                <div class="progress" id="progress-bar">0%</div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="redacao-card">
+                    <div class="redacao-title">
+                        <h2>Redação</h2>
+                    </div>
+
+                    <div class="redacao-content">
+
+                        <div class="redacao-infobox">
+                            <strong>Média de Notas:</strong >
+                            <img src="img/simulado.png" alt="Média de Notas" class="simulado-icon" />
+                            <p>Ultima média <strong>840</strong>.</p>
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Temas de Redação:</strong>
+                            <img src="img/idea.png" alt="Temas de Redação" class="temas-icon" />
+                            
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Minha Redação:</strong>
+                            <img src="img/caderno.png" alt="Minha Redação" class="redacao-icon" />
+                            
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Aulas de Redação:</strong>
+                            <img src="img/video.png" alt="Aulas de Redação" class="video-icon" />
+                            
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Estatísticas:</strong>
+                            <img src="img/Desempenho.png" alt="Estatísticas de Redação" class="estatisticas-icon" />
+                            
+                        </div>
+                    </div>
+                        
+        
+            </section>
+
+            <!-- Calendário a direita -->
+
+            <aside class="calendar-section">
+                <div class="perfil">
+                    <img src="img/perfil.png" alt="Perfil do Usuário" class="perfil-img" />
+                    <h2>Bem-vindo, Arthur!</h2>
+                    <p>Seu Perfil: 75% concluído</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="calendar-card">
+                    <h2>Calendário</h2>
+                    <div class="calendar">
+                        <div class="month">
+                        <h2>Julho 2025</h2>
+                        </div>
+                        <div class="weekdays">
+                        <div>Dom</div>
+                        <div>Seg</div>
+                        <div>Ter</div>
+                        <div>Qua</div>
+                        <div>Qui</div>
+                        <div>Sex</div>
+                        <div>Sáb</div>
+                        </div>
+                        <div class="days">
+                        <!-- Dias de exemplo, ajustados para começar na terça (dia 1) -->
+                        <div class="empty"></div>
+                        <div class="empty"></div>
+                        <div class="day">1</div>
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day">22</div>
+                        <div class="day">23</div>
+                        <div class="day">24</div>
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+                        <div class="day">30</div>
+                        <div class="day">31</div>
+                        </div>
+                    </div>
+                
+                <div class="eventos-futuros">
+                    <img src="img/evento.png" alt="Eventos Futuros" class="eventos-icon">
+                    <h3>Próximos Eventos</h3>
+                    <ul>
+                        <li>Simulado Geral - 15/10</li>
+                        <li>Encontro de Redação - 18/10</li>
+                        <li>Prova ENEM - 03/11</li>
+                    </ul>
+                </div>
+                </div>
+            </aside>
+        </main>
+        
+
+         <script>
+    let progress = 0;
+    const progressBar = document.getElementById("progress-bar");
+
+    function aumentarProgresso() {
+      if (progress < 100) {
+        progress += 1;
+        progressBar.style.width = progress + "%";
+        progressBar.textContent = progress + "%";
+      }
+    }
+
+    // Atualiza a cada 1 segundo
+    setInterval(aumentarProgresso, 1000);
+  </script>
+
+    </body>
+</html>

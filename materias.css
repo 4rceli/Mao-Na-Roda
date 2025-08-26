@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ================== Sidebar ================== */
+.sidebar {
+    float: left;
+    width: 240px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #e0e0e0;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    box-shadow: 0 2px 8px rgba(1, 1, 1, 0.5);
+}
+
+.sidebar h1 {
+    font-size: 2rem;
+    color: #333; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sidebar img {
+    width: 50%; 
+    max-width: 180px; 
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.sidebar a {
+    padding:  10px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar-item {
+  display: flex;
+  gap: 12px; /* Espaço entre ícone e texto */
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Ícones */
+.sidebar-item img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Links */
+.sidebar-item a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Opcional: realçar link ativo */
+.sidebar-item a.active {
+  font-weight: bold;
+  color: #4cafef;
+}
+
+/* ================== Main Content ================== */
+.main-content {
+    padding: 20px 40px;
+    overflow: hidden; /* necessário para float interno */
+    max-width: 860px;
+}
+
+/* ================== Dashboard ================== */
+.dashboard {
+    float: left;
+    max-width: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* ================== Matéria Card ================== */
+.materia-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 40px;
+    width: 800px;
+    max-width: 900px;
+    height: 220px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    gap: 1rem;
+}
+
+.materia-card h2 {
+    text-align: center;
+    margin: auto;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.materia-card-content {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    color: #555;
+    width: 180px;
+    height: 80px;
+    justify-content: space-around;
+    margin: 50px auto ;
+    background-color: #f9f9f9;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.materia-card-content a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #333;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.materia-card-content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: auto;
+    text-align: center;
+}
+
+.materia-card-content:hover {
+    background-color: #e9e9e9;
+}
+
+/* Cores dos cards */
+#azul { background-color: #092BD6; border: 1px solid #b2ebf2; }
+#verde { background-color: #7EF104; border: 1px solid #a5d6a7; }
+#amarelo { background-color: #ffa836; border: 1px solid #fff59d; }
+#rosa { background-color: #FE00CA; border: 1px solid #f8bbd0; }
+
+/* ================== Sumário ================== */
+.sumario {
+    float: right;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    bottom: auto;
+    height: auto;
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sumario h2 {
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.sumario ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sumario ul li {
+    margin: 0.5rem auto;
+    color: #666;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.sumario ul li:hover {
+    color: #333;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+
+
+
+
+/* ================== RESPONSIVIDADE ================== */
+
+/* Tablets (768px e abaixo) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+        margin-left: 1vh;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sidebar img {
+        width: 60%;
+        max-width: 150px;
+    }
+    
+    .sidebar-item {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .sidebar-item img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .sidebar-item a {
+        font-size: 0.9rem;
+    }
+    
+    .main-content {
+        padding: 15px 20px;
+        max-width: 90%;
+    }
+    
+    .dashboard {
+        max-width: 150px;
+        gap: 1rem;
+    }
+    
+    .materia-card {
+        width: 600px;
+        height: 180px;
+        padding: 1rem;
+    }
+    
+    .materia-card h2 {
+        font-size: 1.3rem;
+        padding: 15px;
+    }
+    
+    .materia-card-content {
+        width: 150px;
+        height: 70px;
+        margin: 40px auto;
+        padding: 0.8rem;
+    }
+    
+    .materia-card-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .sumario {
+        width: 250px;
+        right: 30px;
+        top: 40px;
+    }
+    
+    .sumario h2 {
+        font-size: 1.5rem;
+    }
+    
+    .sumario ul li {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celulares grandes (480px e abaixo) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        float: none;
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        position: relative;
+        order: 2;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sidebar img {
+        width: 50%;
+        max-width: 120px;
+    }
+    
+    .sidebar-item {
+        padding: 8px;
+        gap: 6px;
+    }
+    
+    .sidebar-item img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .sidebar-item a {
+        font-size: 0.8rem;
+    }
+    
+    .main-content {
+        padding: 10px;
+        max-width: 100%;
+        overflow: visible;
+    }
+    
+    .dashboard {
+        float: none;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .materia-card {
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .materia-card h2 {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+    
+    .materia-card-content {
+        width: 100%;
+        height: auto;
+        min-height: 60px;
+        margin: 20px auto;
+        padding: 0.8rem;
+    }
+    
+    .materia-card-content h3 {
+        font-size: 1rem;
+    }
+    
+    .sumario {
+        position: relative;
+        float: none;
+        width: 100%;
+        right: auto;
+        top: auto;
+        margin: 20px 0;
+    }
+    
+    .sumario h2 {
+        font-size: 1.4rem;
+    }
+    
+    .sumario ul li {
+        font-size: 1rem;
+    }
+}
+
+/* Celulares pequenos (320px e abaixo) */
+@media (max-width: 320px) {
+    .sidebar {
+        padding: 10px;
+    }
+    
+    .sidebar h1 {
+        font-size: 1.2rem;
+    }
+    
+    .sidebar img {
+        width: 60%;
+        max-width: 100px;
+    }
+    
+    .sidebar-item {
+        padding: 6px;
+        gap: 4px;
+    }
+    
+    .sidebar-item img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .sidebar-item a {
+        font-size: 0.75rem;
+    }
+    
+    .main-content {
+        padding: 8px;
+    }
+    
+    .materia-card {
+        padding: 0.8rem;
+    }
+    
+    .materia-card h2 {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+    
+    .materia-card-content {
+        padding: 0.6rem;
+        margin: 15px auto;
+    }
+    
+    .materia-card-content h3 {
+        font-size: 0.9rem;
+    }
+    
+    .sumario {
+        padding: 0.8rem;
+    }
+    
+    .sumario h2 {
+        font-size: 1.3rem;
+    }
+    
+    .sumario ul li {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+

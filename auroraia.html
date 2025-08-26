@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat IA</title>
+  <link rel="stylesheet" href="auroraia.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+
+        <asside class="sidebar">
+            <img  src="img/logo.png" alt="Leme de navio com a frase Mão na Roda">
+            <h1>Mão na Roda</h1>
+            <nav>
+                <ul>
+                    <strong>
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/home.png" alt="logo de Home" class="sidebar-icon">
+                            <li><a href="./index.html">Home</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/conteudos.png" alt="logo de materias" class="sidebar-icon">
+                            <li><a href="materias.html">Matérias</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/conteudos.png" alt="logo de questoes" class="sidebar-icon">
+                            <li><a href="questoes.html">Questões</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/escrita.png" alt="logo de redação" class="sidebar-icon">
+                            <li><a href="form.html">Redação</a></li>
+                        </div>
+
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/chatbot.png" alt="Imagem de IA" class="sidebar-icon">
+                            <li><a href="auroraia.html">Aurora IA</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/calendario.png" alt="calendario" class="sidebar-icon">
+                            <li><a href="calendario.html">Calendário</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/suporte.png" alt="Suporte" class="sidebar-icon">
+                            <li><a href="suporte.html">Suporte</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/configuracoes.png" alt="Logo de configurações" class="sidebar-icon">
+                            <li><a href="configuracoes.html">Configurações</a></li>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <img src="img/sidebar-icons/sair.png" alt="Logo de sair" class="sidebar-icon">
+                            <li><a href="login.html">Sair</a></li>
+                        </div>
+                    
+                    </strong>
+                </ul>
+            </nav>
+        </asside>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      Chat de Estudos com IA
+    </div>
+    <div class="chat-messages">
+      <div class="message ai">Olá! Sou a Aurora sua IA de estudos. Como posso te ajudar hoje?</div>
+      <div class="message user">Quero revisar Matemática.</div>
+      <div class="message ai">Perfeito! Deseja revisar álgebra, geometria ou outro tema?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+      <button onclick="enviarMensagem()">Enviar</button>
+    </div>
+
+  <script>
+    function enviarMensagem() {
+      const input = document.getElementById('chat-input');
+      const mensagem = input.value.trim();
+      
+      if (mensagem) {
+        const chatMessages = document.querySelector('.chat-messages');
+        const userMessage = document.createElement('div');
+        userMessage.className = 'message user';
+        userMessage.textContent = mensagem;
+        chatMessages.appendChild(userMessage);
+        
+        // Simular resposta da IA
+        setTimeout(() => {
+          const aiMessage = document.createElement('div');
+          aiMessage.className = 'message ai';
+          aiMessage.textContent = 'Entendi! Vou te ajudar com isso. Em breve implementarei respostas mais inteligentes.';
+          chatMessages.appendChild(aiMessage);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+        
+        input.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    // Permitir envio com Enter
+    document.getElementById('chat-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        enviarMensagem();
+      }
+    });
+  </script>
+  </div>
+</body>
+</html>
