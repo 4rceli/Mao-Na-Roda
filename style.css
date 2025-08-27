@@ -109,7 +109,7 @@ body{
 .carrosel-item img{
     width: 100%; /* Largura da imagem do carrossel */
     height: auto; /* Altura automática para manter a proporção */
-    border-radius: 70px; /* Bordas arredondadas da imagem do carrossel */
+    border-radius: 100px; /* Bordas arredondadas da imagem do carrossel */
 }
 
 /* Cronograma Card */
@@ -551,4 +551,5 @@ border-radius: 30px 30px 0 0;
 .empty {
   border: 1px solid transparent;
 }
+
 
