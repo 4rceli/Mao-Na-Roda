@@ -141,7 +141,7 @@ select, input[type="range"] {
 /* Perfil do usuário */
 .perfil {
   max-width: 800px;
-  margin-top: 50px;
+
   margin-left: 400px;
   padding: 2rem;
   background: linear-gradient(145deg, #ffffff, #f5f7fa);
@@ -151,6 +151,7 @@ select, input[type="range"] {
   align-items: center;
   gap: 30px;
   transition: transform 0.3s ease;
+  margin: 25px 580px;
 }
 
 .perfil:hover {
